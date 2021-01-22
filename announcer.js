@@ -50,4 +50,4 @@ async function handleCommand(roomId, event) {
   client.sendMessage(roomId, reply);
   await delay(10000);
   client.redactEvent(roomId, event['event_id'], 'Preventing Multiple Posting');
-});
+};
