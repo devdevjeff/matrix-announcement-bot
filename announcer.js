@@ -1,3 +1,7 @@
+import {
+    RichReply,
+} from "matrix-bot-sdk";
+
 const cheerio = require('cheerio')
 const request = require('request')
 const jsonfile = require('jsonfile')
