@@ -39,12 +39,6 @@ async function handleCommand(roomId, event) {
       }
     }
   }
-  
-  try {
-  client.unstableApis.addReactionToEvent(roomId, event['event_id'], '✅');
-  }
-  catch {
-  }
   const replyBody = "Announcement send. Messagesource will be deleted in 10 seconds to prevent multiple posting"
   const reply = RichReply.createFor(roomId, event, replyBody, replyBody);
   reply["msgtype"] = "m.notice";
