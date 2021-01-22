@@ -1,7 +1,3 @@
-import {
-    RichReply,
-} from "matrix-bot-sdk";
-
 const cheerio = require('cheerio')
 const request = require('request')
 const jsonfile = require('jsonfile')
@@ -13,6 +9,7 @@ var config = jsonfile.readFileSync(configfile)
 const MatrixClient = sdk.MatrixClient;
 const SimpleFsStorageProvider = sdk.SimpleFsStorageProvider;
 const AutojoinRoomsMixin = sdk.AutojoinRoomsMixin;
+const RichReply = sdk.RichReply;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 const client = new MatrixClient(config.homeServerUrl, config.accessToken, new SimpleFsStorageProvider(config.storage));
 
