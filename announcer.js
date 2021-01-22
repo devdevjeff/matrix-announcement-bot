@@ -39,10 +39,10 @@ async function handleCommand(roomId, event) {
       }
     }
   }
-  const replyBody = "Announcement send. Messagesource will be deleted in 10 seconds to prevent multiple posting"
+  const replyBody = "Announcement send. Messagesource will be deleted in 60 seconds to prevent multiple posting"
   const reply = RichReply.createFor(roomId, event, replyBody, replyBody);
   reply["msgtype"] = "m.notice";
   client.sendMessage(roomId, reply);
-  await delay(10000);
+  await delay(60000);
   client.redactEvent(roomId, event['event_id'], 'Preventing Multiple Posting');
 };
